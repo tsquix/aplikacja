@@ -30,7 +30,7 @@ fs.readFile("marka.txt", "utf8", (err, data) => {
   content += "\n];";
   // console.log(content);
   //zapis łańcucha do pliku
-  fs.writeFile("./src/module-data.js", content, (err) => {
+  fs.writeFile("./src/data/module-data.js", content, (err) => {
     if (err) {
       console.error(err);
     }
