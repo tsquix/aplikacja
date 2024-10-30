@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Lab2 from "./pages/Lab2";
 import NotFound from "./pages/NotFound";
 import SimpleLayout from "./layouts/SimpleLayout";
+import Lab3 from "./pages/Lab3";
 const menuItems = [
   {
     id: 1,
@@ -28,26 +29,35 @@ const menuItems = [
     urlPattern: "/lab2/:id",
     element: <Lab2 />,
   },
+  {
+    id: 4,
+    label: "Laboratorium 3",
+    url: "/lab3",
+    urlPattern: "/lab3",
+    element: <Lab3 />,
+  },
 ];
 function App() {
   return (
-    <Router>
-      <>
-        <RootLayout items={menuItems}>
-          <Routes>
-            {menuItems.map((item) => (
-              <Route
-                key={item.id}
-                path={item.urlPattern}
-                element={item.element}
-              />
-            ))}
-            <Route path="/*" element={<NotFound />} />
-            <Route path="/lab2" element={<p>Brak id samochodu</p>} />
-          </Routes>
-        </RootLayout>
-      </>
-    </Router>
+    <div>
+      <Router>
+        <>
+          <RootLayout items={menuItems}>
+            <Routes>
+              {menuItems.map((item) => (
+                <Route
+                  key={item.id}
+                  path={item.urlPattern}
+                  element={item.element}
+                />
+              ))}
+              <Route path="/*" element={<NotFound />} />
+              <Route path="/lab2" element={<p>Brak id samochodu</p>} />
+            </Routes>
+          </RootLayout>
+        </>
+      </Router>
+    </div>
   );
 }
 

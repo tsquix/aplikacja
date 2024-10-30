@@ -3,7 +3,7 @@ import { data } from "../data/module-data";
 
 export default function Lab1() {
   return (
-    <div>
+    <div className="mbb">
       {data.map((car) => (
         <CarProfile key={car.id} car={car} />
       ))}

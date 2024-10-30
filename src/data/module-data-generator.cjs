@@ -24,7 +24,8 @@ fs.readFile("marka.txt", "utf8", (err, data) => {
     year: ${Math.floor(Math.random() * 10 + 2000)},
     registrationNumber: "KR ${Array.from({ length: 6 }, () =>
       characters.charAt(Math.floor(Math.random() * characters.length))
-    ).join("")}"
+    ).join("")}",
+    rating: ${Math.floor(Math.random() * 11)}
   }${i < count - 1 ? "," : ""}`;
   }
   content += "\n];";

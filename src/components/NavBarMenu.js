@@ -3,7 +3,7 @@ import { Nav, Navbar, Container } from "react-bootstrap";
 export default function NavBarMenu({ items }) {
   return (
     <Navbar bg="light" expand="lg" className="mb-5">
-      <Container cla>
+      <Container>
         <Navbar.Brand>Frameworki frontendowe</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
