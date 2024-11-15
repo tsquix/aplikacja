@@ -1,32 +1,28 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import RatingBar from "./RatingBar";
-import AppReducer from "../data/AppReducer";
-//lab 1
-
+import AppContext from "../data/AppContext";
+import { useNavigate } from "react-router-dom";
 export default function CarProfile({ car }) {
-  const [state, dispatch] = useReducer(AppReducer, car);
-  const [rating, setRating] = useState(car.rating);
+  const context = useContext(AppContext);
+  const { dispatch } = context;
+  const navigate = useNavigate();
   const [isFirstClick, setIsFirstClick] = useState(true);
+
   function rateCar() {
     let newRating;
     if (isFirstClick) {
       setIsFirstClick(false);
       newRating = 10;
-      setRating(newRating);
-      console.log(newRating);
     } else {
-      newRating = rating === 10 ? 0 : rating + 1;
-      setRating(newRating);
-      console.log(newRating);
+      newRating = car.rating === 10 ? 0 : car.rating + 1;
     }
-    console.log("New rating to dispatch:", newRating);
+
     dispatch({
       type: "rate",
       id: car.id,
       rating: newRating,
     });
   }
-  const currentRating = state.rating;
 
   return (
     <div className="mt-5 mx-4 ">
@@ -42,20 +38,21 @@ export default function CarProfile({ car }) {
           <strong>Numer rejestracyjny:</strong> {car.registrationNumber}
         </li>
         <li>
-          <strong>Rating:</strong> {currentRating}
+          <strong>Rating:</strong> {car.rating}
         </li>
         <span className="my-4">
-          <RatingBar rate={currentRating} />
+          <RatingBar rate={car.rating} />
         </span>
         <div className="mt-2">
           <button
             type="button"
-            className="btn btn-primary "
+            className="btn btn-primary"
             onClick={() => {
               dispatch({
                 type: "edit",
                 id: car.id,
               });
+              navigate(`/lab4/edit/${car.id}`);
             }}
           >
             Edit
@@ -67,6 +64,7 @@ export default function CarProfile({ car }) {
               dispatch({
                 type: "delete",
                 id: car.id,
+                cars: { car },
               });
             }}
           >

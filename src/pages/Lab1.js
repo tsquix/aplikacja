@@ -1,11 +1,11 @@
-import CarProfile from "../components/CarProfile";
+import CarProfileDisplay from "../components/CarProfileDisplay";
 import { data } from "../data/module-data";
 
 export default function Lab1() {
   return (
-    <div className="mbb">
+    <div className="mt-5 mx-4 ">
       {data.map((car) => (
-        <CarProfile key={car.id} car={car} />
+        <CarProfileDisplay key={car.id} car={car} />
       ))}
     </div>
   );

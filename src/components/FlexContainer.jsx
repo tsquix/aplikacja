@@ -5,7 +5,7 @@ import AppReducer from "../data/AppReducer"; // Add AppReducer import
 export default function FlexContainer({ data }) {
   const Item = ({ name, id }) => (
     <Card style={{ width: `18rem` }} className="border mb-3 p-3 ms-3" key={id}>
-      {name} {/* Display the name */}
+      {name}
     </Card>
   );
   return (

@@ -1,23 +1,23 @@
 export const data = [
   {
     id: 1,
-    name: "BMW",
-    year: 2002,
-    registrationNumber: "KR 1C0TDG",
-    rating: 1
+    name: "Audi",
+    year: 2008,
+    registrationNumber: "KR XA8HOI",
+    rating: 2
   },
   {
     id: 2,
-    name: "Mercedes",
-    year: 2007,
-    registrationNumber: "KR IBEB9I",
-    rating: 6
+    name: "Audi",
+    year: 2004,
+    registrationNumber: "KR N3FXN7",
+    rating: 10
   },
   {
     id: 3,
     name: "Audi",
-    year: 2009,
-    registrationNumber: "KR LAIP3N",
-    rating: 0
+    year: 2005,
+    registrationNumber: "KR 452ZGH",
+    rating: 2
   }
 ];
