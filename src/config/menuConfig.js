@@ -1,9 +1,12 @@
+import Comments from "../components/Comments";
+import User from "../components/User";
 import Home from "../pages/Home";
 import Lab1 from "../pages/Lab1";
 import Lab2 from "../pages/Lab2";
 import Lab3 from "../pages/Lab3";
 import Lab4 from "../pages/Lab4";
 import Lab4Add from "../pages/Lab4Add";
+import Lab5 from "../pages/Lab5";
 
 export const menuItems = [
   {
@@ -47,5 +50,12 @@ export const menuItems = [
     url: "/lab4/add",
     urlPattern: "/lab4/add",
     element: <Lab4Add />,
+  },
+  {
+    id: 6,
+    label: "Lab5",
+    url: "/lab5",
+    urlPattern: "/lab5",
+    element: <Lab5 />,
   },
 ];

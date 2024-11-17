@@ -2,9 +2,9 @@ import React, { useState, useEffect, useReducer, useContext } from "react";
 import RatingBar from "./RatingBar";
 import AppContext from "../data/AppContext";
 import { useNavigate } from "react-router-dom";
+import useDispatch from "../hooks/useDispatch";
 export default function CarProfile({ car }) {
-  const context = useContext(AppContext);
-  const { dispatch } = context;
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [isFirstClick, setIsFirstClick] = useState(true);
 
